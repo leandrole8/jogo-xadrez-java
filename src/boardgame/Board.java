@@ -2,22 +2,22 @@ package boardgame;
 
 public class Board {
 	
-	private int rowns;
+	private int rows;
 	private int columns;
 	private Piece[][] pieces;//matriz para as peças do tabuleiro
 	
 	public Board(int rowns, int columns) {
-		this.rowns = rowns;
+		this.rows = rowns;
 		this.columns = columns;
 		pieces = new Piece[rowns][columns];
 	}
 
-	public int getRowns() {
-		return rowns;
+	public int getRows() {
+		return rows;
 	}
 
-	public void setRowns(int rowns) {
-		this.rowns = rowns;
+	public void setRows(int rowns) {
+		this.rows = rows;
 	}
 
 	public int getColumns() {
@@ -26,6 +26,14 @@ public class Board {
 
 	public void setColumns(int columns) {
 		this.columns = columns;
+	}
+	
+	public Piece piece(int row, int column) {
+		return pieces[row][column];
+	}
+	
+	public Piece piece(Position position) {
+		return pieces[position.getRow()][position.getColumn()];
 	}
 
 }
